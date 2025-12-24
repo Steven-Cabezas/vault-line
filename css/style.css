@@ -1534,11 +1534,11 @@ pre {
 
 .table-dark {
   color: #fff;
-  background-color: #343a40; }
+  background-color: #1B1D21; }
   .table-dark th,
   .table-dark td,
   .table-dark thead th {
-    border-color: #454d55; }
+    border-color: #1B1D21; }
   .table-dark.table-bordered {
     border: 0; }
   .table-dark.table-striped tbody tr:nth-of-type(odd) {
@@ -3778,9 +3778,13 @@ input[type="button"].btn-block {
     .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
       color: #fff; }
 
- 
+ /* ============================
+   CUSTOM STYLES FOR SPORTSBOOK THEME
+   ============================ */
+
+
 /* ============================
-   SIDEBAR
+   SIDEBAR MAIN MENU LEFT
    ============================ */
 #sidebar {
   position: fixed;
@@ -3944,7 +3948,6 @@ input[type="button"].btn-block {
 
 
 
-
 /* ===================================================
   CONTENEDOR UN BLOQUE DE BANNERS 100% CON IMAGEN DE FONDO
 =================================================== */
@@ -4034,6 +4037,55 @@ a:hover .menu-icon path {
 }
 
 
+/* ===================================================
+  MENU SIDEBAR TOGGLE CASINO-SPORTS reset
+=================================================== */
+.toggle-group {
+  width: 100%;
+}
+
+.toggle-group .btn {
+  flex: 1;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #222;
+  border: 1px solid #444;
+  transition: background .25s ease;
+}
+
+/* Bordes externos */
+#btn-sports-toggle {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+#btn-casino-toggle {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: none !important;            /* sin borde derecho */
+}
+
+/* ESTADO ACTIVO — AHORA SÍ */
+.toggle-group .btn.active {
+  background-image: linear-gradient(to right, #28a745, #33485d);
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff;
+}
+
+
+/* esto hace el borde del centro - oseai iz de btn sports siempre azul */
+#btn-sports-toggle {
+  border-left: 1px solid #007bff; /* azul Bootstrap primary */
+}
+
+/* Mantener el borde azul incluso cuando está activo */
+#btn-sports-toggle.active {
+  border-left: 1px solid #007bff !important;
+}
 
 /* ===================================================
   CONTENEDOR DOS BLOQUES DE BANNERS CON IMAGEN DE FONDO
@@ -4386,6 +4438,18 @@ a:hover .menu-icon path {
   display: block;
 }
 
+.horizontal-wrapper ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.horizontal-wrapper ul {
+  display: inline-block;
+  width: 100%;
+}
+ 
+
 /* AQUÍ PEGAS EL @keyframes */
 @keyframes scroll {
   0% {
@@ -4397,9 +4461,351 @@ a:hover .menu-icon path {
 }
 
 
+.infoboxes {
+	background: linear-gradient(to bottom, #222 0%, #21212E 100%);
+}
+
+
+.block-cryptofutures h4 a span.text{ color: #fff;}
+.block-cryptofutures h5 a span.text{ color: #58f78a;}
 
 
 
+.block-title i  {color: #ffffff}
+
+
+.block-arrows.mb-3 h4 { color: #E4E4E4; font-weight: 700}
+.block-arrows.mb-3 h4 span.block-title { color: #B2B2B2; font-weight: 200; font-size: 0.8em}
+
+.block-arrows.mb-3 h4 span a {color: #FFBD00}
+.block-arrows.mb-3 h4 span a:hover {text-decoration: underline}
+
+
+
+
+.market-header {
+  display: flex;
+  align-items: center;   /* vertical center */
+  margin: 0;
+}
+
+.market-header .icon {
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.market-header .text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.market-header .symbol {
+  font-weight: 600;
+}
+
+
+/* ===========================================
+    Columna de 1.5 / 12 = 12.5% para seccion de mini banners live wins index top
+   =========================================== */
+
+
+.col-1-5 {
+  flex: 0 0 12.5%;
+  max-width: 12.5%;
+}
+
+/* Gutter al 50% del default de Bootstrap */
+.row.gutter-half {
+  margin-left: -7.5px;
+  margin-right: -7.5px;
+}
+
+.row.gutter-half > [class*="col"] {
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+
+/* Desktop: 1.5 columnas (8 por fila) - esto es para hacer responsive la seccion 6 tablet - 4 mobile*/
+@media (min-width: 992px) {
+  .col-lg-1-5 {
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+}
+
+/* Gutter al 50% */
+.row.gutter-half {
+  margin-left: -7.5px;
+  margin-right: -7.5px;
+}
+
+.row.gutter-half > [class*="col"] {
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+
+
+/* ===========================================
+    SCROLL HORIZONTAL INFINITO CON FLECHAS PARA CONTENIDO IMPORTANTE
+   =========================================== */
+
+
+/* Scope del scroll */
+.horizontal-scroll-section .horizontal-wrapper {
+  overflow: hidden;
+}
+
+.horizontal-scroll-section .horizontal-track {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.45s ease;
+}
+
+/* columnas congeladas SOLO aquí */
+.horizontal-scroll-section .item {
+  flex: 0 0 auto;
+}
+
+/* Demo */
+.horizontal-scroll-section .card-box {
+  background: linear-gradient(to bottom, #111111 0%, #21212E 100%);
+  color: #ccc;
+}
+
+/* Flechas */
+.horizontal-scroll-section .block-arrows {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-scroll-section .block-arrows ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;   /* clave */
+  display: inline-flex;
+  align-items: center;
+}
+
+.horizontal-scroll-section .block-arrows li a {
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 5px;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: #222;
+}
+
+
+
+/* Disabled */
+/* corregido: block-arrows  */
+.horizontal-scroll-section .block-arrows li a.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* cambia a azul al pasar el mouse */
+.block-arrows li a:hover {
+  background-color: #007bff; 
+  color: #fff; /* asegura que el texto siga visible */
+}
+
+
+
+.card-box h4 { color: #ffffff}
+
+.card-box h4 span.text { color: #58f78a;}
+
+.card-box h3 strong.number { color: #ffffff;}
+
+.card-box p span.text { color: #FFBD00;}
+
+.card-box {line-height: 1em; border-radius: 5px}
+
+
+h1.card-title {font-weight: 700; font-size: 45px; color: #fff;}
+
+.card-sports-01 {
+	background: linear-gradient(to bottom, #222, #35457b );
+}
+
+.card-sports-02 {
+	background: linear-gradient(to bottom, #222, #457f25 );
+}
+
+.card-sports-03 {
+	background: linear-gradient(to bottom, #222, #493272 );
+}
+
+.card-sports-04 {
+	background: linear-gradient(to bottom, #222, #327271);
+}
+
+.card-sports-05 {
+	background: linear-gradient(to bottom, #222, #726132);
+}
+
+.card-sports-06 {
+	background: linear-gradient(to bottom, #222, #ad2458);
+}
+
+.card-sports-07 {
+	background: linear-gradient(to bottom, #222, #b58130);
+}
+
+/* ===========================================
+    Hover moves up and down
+   =========================================== */
+
+
+.hover-up {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-up:hover {
+  transform: translateY(-10px); /* moves up */
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* optional: nice shadow on hover */
+}
+
+
+/* ===========================================
+    Hover moves up and down
+   =========================================== */
+
+.hover-zoom-out {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-zoom-out:hover {
+  transform: scale(0.95); /* shrink 5% */
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* optional: subtle shadow */
+	
+	
+}
+
+
+/* table data table index scrool vertical */
+
+.table-data {
+  border-collapse: separate;
+  border-spacing: 0 5px;     /* separación vertical */
+  background-color: #000;   /* color del espacio entre filas */
+}
+
+.table-data thead tr th {
+  border: none;
+}
+
+.table-data tbody tr {
+  background-color: #171718;
+}
+
+.table-data tbody tr td,
+.table-data tbody tr th {
+  border: none;
+}
+
+/* Bordes redondeados por fila */
+.table-data tbody tr td:first-child,
+.table-data tbody tr th:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.table-data tbody tr td:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.table-data thead th {
+  background-color: #171718;
+  color: #666; /* opcional */
+  border: none;
+  text-transform: uppercase;
+}
+
+.table-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+	border-radius: 3px;
+}
+
+
+
+/* este estilo es necesario para el efecto vertical scroll con java*/
+
+.table-data-container {
+  overflow: hidden;
+}
+
+
+/* este estilo es para hacer boton 3d*/
+
+.btn-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 6px 0 rgba(0,0,0,0.35),
+    0 8px 15px rgba(0,0,0,0.25);
+  transition: all 0.15s ease-in-out;
+}
+
+/* Pressed effect */
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 rgba(0,0,0,0.35),
+    0 4px 8px rgba(0,0,0,0.25);
+}
+
+/* Optional hover polish */
+.btn-3d:hover {
+  filter: brightness(1.05);
+}
+
+/* =========================
+   Bootstrap 4 – Botón Emboss 3D
+   ========================= */
+
+.btn-emboss {
+  position: relative;
+  box-shadow:
+    inset 0 3px 0 rgba(255,255,255,0.45),   /* luz superior */
+    inset 0 -3px 0 rgba(0,0,0,0.55),        /* sombra inferior */
+    0 5px 0 rgba(0,0,0,0.5),                /* base */
+    0 10px 18px rgba(0,0,0,0.35);           /* sombra ambiente */
+  transition: all 0.12s ease-in-out;
+}
+
+/* Hover: ligero realce */
+.btn-emboss:hover {
+  filter: brightness(1.05);
+}
+
+/* Active: botón hundido */
+.btn-emboss:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 2px 2px rgba(0,0,0,0.5),
+    inset 0 -1px 0 rgba(255,255,255,0.2),
+    0 2px 0 rgba(0,0,0,0.45);
+}
 
 /* ---------------------------- */
 
@@ -4417,7 +4823,7 @@ a:hover .menu-icon path {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  /*border: 1px solid rgba(0, 0, 0, 0.125);*/
   border-radius: 0.25rem; }
   .card > hr {
     margin-right: 0;
@@ -8796,7 +9202,7 @@ h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   line-height: 1.5;
   color: #203d67;
-  font-weight: 400; }
+  font-weight: 700; }
 
 .text-primary {
   color: #3f52e3 !important; }
@@ -9510,7 +9916,7 @@ textarea.form-control {
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   .staff .img-wrap {
-    height: 300px; }
+    height: 120px; }
   .staff .img {
     width: 100%;
     display: block;
@@ -9522,29 +9928,30 @@ textarea.form-control {
     transition: all 0.3s ease; }
   .staff .text {
     position: relative;
-    background: #fff;
+    background: #222;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease; }
     .staff .text h3 {
-      font-size: 22px;
-      font-weight: 500;
+      font-size: 19px;
+      font-weight: 300;
       margin-bottom: 0;
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       -ms-transition: all 0.3s ease;
       transition: all 0.3s ease;
-      color: #000;
+      color: #58f78a;
       margin-bottom: 5px; }
     .staff .text .position {
-      color: #ff8ba7;
+      color: #dde5e8;
       display: block;
-      font-weight: 500;
+      font-weight: 300;
       display: inline-block;
-      margin-bottom: 10px; }
+      margin-bottom: 10px; 
+	  font-size: 14px;}
     .staff .text .faded {
       opacity: 1; }
   .staff .ftco-social {
@@ -9584,6 +9991,8 @@ textarea.form-control {
       margin-top: -10px; }
     .staff:hover .text h3, .staff:focus .text h3 {
       color: #3f52e3; }
+
+
 
 .ftco-social {
   padding: 0; }
